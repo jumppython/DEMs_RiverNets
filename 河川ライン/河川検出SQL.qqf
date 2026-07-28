@@ -1,0 +1,1 @@
+<Query>select * from "DB name" where "W05_002" = 'river code'</Query>

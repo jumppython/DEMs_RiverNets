@@ -1,0 +1,62 @@
+[
+  {
+    name: "久木",
+    river: "奈半利川水系 奈半利川",
+    prefectures: ["高知県"]
+  },
+  {
+    name: "魚梁瀬",
+    river: "奈半利川水系 奈半利川",
+    prefectures: ["高知県"]
+  },
+  {
+    name: "黒又川第一",
+    river: "信濃川水系 魚野川支流 破間川支川 黒又川",
+    prefectures: ["新潟県"]
+  },
+  {
+    name: "瀬戸石",
+    river: "球磨川水系 球磨川",
+    prefectures: ["熊本県"]
+  },
+  {
+    name: "川内川第二",
+    river: "川内川水系 川内川",
+    prefectures: ["熊本県", "宮崎県", "鹿児島県"]
+  },
+  {
+    name: "早明浦",
+    river: "吉野川水系 吉野川",
+    prefectures: ["高知県", "徳島県"]
+  },
+  {
+    name: "胆沢",
+    river: "北上川水系 胆沢川",
+    prefectures: ["岩手県"]
+  },
+  {
+    name: "鶴田",
+    river: "川内川水系 川内川",
+    prefectures: ["熊本県", "宮崎県", "鹿児島県"]
+  },
+  {
+    name: "田瀬",
+    river: "北上川水系 猿ヶ石川",
+    prefectures: ["岩手県"]
+  },
+  {
+    name: "破間川",
+    river: "信濃川水系 破間川",
+    prefectures: ["新潟県"]
+  },
+  {
+    name: "平石",
+    river: "平石川",
+    prefectures: ["新潟県"]
+  },
+  {
+    name: "平鍋",
+    river: "奈半利川水系 奈半利川",
+    prefectures: ["高知県"]
+  }
+]
