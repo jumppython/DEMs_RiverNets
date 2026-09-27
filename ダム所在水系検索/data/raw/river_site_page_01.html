@@ -1,0 +1,455 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+<TITLE>国土交通省　水文水質データベース</TITLE>
+<link rel="stylesheet" href="/main.css" type="text/css">
+<script type="text/javascript" src="/js/common.js" defer></script>
+<script type="text/javascript" src="/js/SrchSite.js" defer></script>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<FONT SIZE="1">
+<FORM NAME="SELECT" ACTION="/cgi-bin/SrchSite.exe" METHOD="GET">
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" BGCOLOR="#CCCCCC" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="7" ALIGN="CENTER" VALIGN="TOP" BGCOLOR="#FFFFFF">
+      <FONT SIZE=+1>観測所諸元からの検索</FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="7" ALIGN="LEFT" VALIGN="MIDDLE">
+      <FONT SIZE=-1>
+      ●主要諸元検索
+      <FONT SIZE=-1>
+        下記条件をすべてみたす観測所を検索します。 
+      <FONT SIZE=-2>(※文字入力の場合、入力された文字を含んでいるデータを検索します。　ブランク可。)</FONT>
+      </FONT>
+    </TD>
+  </TR>
+  <TR>
+    <TD ALIGN="LEFT" VALIGN="TOP" nowrap>
+      <NOBNR><FONT SIZE=-1>観測項目</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <SELECT NAME="KOMOKU">
+        <OPTION VALUE="-1">全観測項目</OPTION>
+        <OPTION VALUE="01">雨量</OPTION>
+        <OPTION VALUE="02">水位流量</OPTION>
+        <OPTION VALUE="03">水質・底質</OPTION>
+        <OPTION VALUE="04">地下水位・水質</OPTION>
+        <OPTION VALUE="05" SELECTED>ダム・堰</OPTION>
+        <OPTION VALUE="06">海象</OPTION>
+        <OPTION VALUE="07">積雪深</OPTION>
+      </SELECT>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <NOBNR><FONT SIZE=-1>観測所名</FONT><FONT SIZE=-2>※</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <INPUT TYPE="TEXT" NAME="NAME" SIZE="20">
+    </TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+  </TR>
+  <TR>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <NOBNR><FONT SIZE=-1>水系名</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <SELECT NAME="SUIKEI">
+        <OPTION VALUE="-1" SELECTED>全水系</OPTION>
+        <OPTION VALUE="90331000">福地川</OPTION>
+        <OPTION VALUE="90332000">新川川</OPTION>
+        <OPTION VALUE="90333000">安波川</OPTION>
+        <OPTION VALUE="90334000">辺野喜川</OPTION>
+        <OPTION VALUE="90335000">漢那福地川</OPTION>
+        <OPTION VALUE="90336000">羽地大川</OPTION>
+        <OPTION VALUE="90338000">億首川</OPTION>
+        <OPTION VALUE="90339000">天願川</OPTION>
+        <OPTION VALUE="90509000">大保川</OPTION>
+        <OPTION VALUE="90512000">大井川</OPTION>
+        <OPTION VALUE="90538000">報得川</OPTION>
+        <OPTION VALUE="981198">増幌川</OPTION>
+        <OPTION VALUE="981199">声問川</OPTION>
+        <OPTION VALUE="983308">富士川</OPTION>
+        <OPTION VALUE="987111">大社湾</OPTION>
+        <OPTION VALUE="987799">蒲生川</OPTION>
+        <OPTION VALUE="99901000">港川</OPTION>
+        <OPTION VALUE="99902000">ジニサン川</OPTION>
+        <OPTION VALUE="99903000">長浜川</OPTION>
+        <OPTION VALUE="99904000">白水川</OPTION>
+        <OPTION VALUE="147999">有津川</OPTION>
+        <OPTION VALUE="247004">大浦川</OPTION>
+        <OPTION VALUE="547102">与那川</OPTION>
+        <OPTION VALUE="547103">比地川</OPTION>
+        <OPTION VALUE="547104">田嘉里川</OPTION>
+        <OPTION VALUE="547105">大保川</OPTION>
+        <OPTION VALUE="547106">源河川</OPTION>
+        <OPTION VALUE="547130">汀間川</OPTION>
+        <OPTION VALUE="547135">奥川</OPTION>
+        <OPTION VALUE="547146">億首川</OPTION>
+        <OPTION VALUE="547147">座津武川</OPTION>
+        <OPTION VALUE="547148">比謝川</OPTION>
+        <OPTION VALUE="547151">武見川</OPTION>
+        <OPTION VALUE="547152">宇嘉川</OPTION>
+        <OPTION VALUE="547153">佐手川</OPTION>
+        <OPTION VALUE="547154">佐手前川</OPTION>
+        <OPTION VALUE="547155">宇良川</OPTION>
+        <OPTION VALUE="547157">外掘田川</OPTION>
+        <OPTION VALUE="547158">根路銘ポンプ場</OPTION>
+        <OPTION VALUE="81001000">天塩川</OPTION>
+        <OPTION VALUE="81002000">渚滑川</OPTION>
+        <OPTION VALUE="81003000">湧別川</OPTION>
+        <OPTION VALUE="81004000">常呂川</OPTION>
+        <OPTION VALUE="81005000">網走川</OPTION>
+        <OPTION VALUE="81006000">留萌川</OPTION>
+        <OPTION VALUE="81007000">石狩川</OPTION>
+        <OPTION VALUE="81008000">尻別川</OPTION>
+        <OPTION VALUE="81009000">後志利別川</OPTION>
+        <OPTION VALUE="81010000">鵡川</OPTION>
+        <OPTION VALUE="81011000">沙流川</OPTION>
+        <OPTION VALUE="81012000">釧路川</OPTION>
+        <OPTION VALUE="81013000">十勝川</OPTION>
+        <OPTION VALUE="81201000">声問川</OPTION>
+        <OPTION VALUE="81221000">勇払川</OPTION>
+        <OPTION VALUE="81241000">標津川</OPTION>
+        <OPTION VALUE="82014000">岩木川</OPTION>
+        <OPTION VALUE="82015000">高瀬川</OPTION>
+        <OPTION VALUE="82016000">馬淵川</OPTION>
+        <OPTION VALUE="82017000">北上川</OPTION>
+        <OPTION VALUE="82018000">鳴瀬川</OPTION>
+        <OPTION VALUE="82019000">名取川</OPTION>
+        <OPTION VALUE="82020000">阿武隈川</OPTION>
+        <OPTION VALUE="82021000">米代川</OPTION>
+        <OPTION VALUE="82022000">雄物川</OPTION>
+        <OPTION VALUE="82023000">子吉川</OPTION>
+        <OPTION VALUE="82024000">最上川</OPTION>
+        <OPTION VALUE="82025000">赤川</OPTION>
+        <OPTION VALUE="83026000">久慈川</OPTION>
+        <OPTION VALUE="83027000">那珂川</OPTION>
+        <OPTION VALUE="83028000">利根川</OPTION>
+        <OPTION VALUE="83029000">荒川</OPTION>
+        <OPTION VALUE="83030000">多摩川</OPTION>
+        <OPTION VALUE="83031000">鶴見川</OPTION>
+        <OPTION VALUE="83032000">相模川</OPTION>
+        <OPTION VALUE="83046000">富士川</OPTION>
+        <OPTION VALUE="84033000">荒川</OPTION>
+        <OPTION VALUE="84034000">阿賀野川</OPTION>
+        <OPTION VALUE="84035000">信濃川</OPTION>
+        <OPTION VALUE="84036000">関川</OPTION>
+        <OPTION VALUE="84037000">姫川</OPTION>
+        <OPTION VALUE="84038000">黒部川</OPTION>
+        <OPTION VALUE="84039000">常願寺川</OPTION>
+        <OPTION VALUE="84040000">神通川</OPTION>
+        <OPTION VALUE="84041000">庄川</OPTION>
+        <OPTION VALUE="84042000">小矢部川</OPTION>
+        <OPTION VALUE="84043000">手取川</OPTION>
+        <OPTION VALUE="84044000">梯川</OPTION>
+        <OPTION VALUE="84270000">胎内川</OPTION>
+        <OPTION VALUE="84271000">加治川</OPTION>
+        <OPTION VALUE="85045000">狩野川</OPTION>
+        <OPTION VALUE="85047000">安倍川</OPTION>
+        <OPTION VALUE="85048000">大井川</OPTION>
+        <OPTION VALUE="85049000">菊川</OPTION>
+        <OPTION VALUE="85050000">天竜川</OPTION>
+        <OPTION VALUE="85051000">豊川</OPTION>
+        <OPTION VALUE="85052000">矢作川</OPTION>
+        <OPTION VALUE="85053000">庄内川</OPTION>
+        <OPTION VALUE="85054000">木曽川</OPTION>
+        <OPTION VALUE="85056000">鈴鹿川</OPTION>
+        <OPTION VALUE="85057000">雲出川</OPTION>
+        <OPTION VALUE="85058000">櫛田川</OPTION>
+        <OPTION VALUE="85059000">宮川</OPTION>
+        <OPTION VALUE="85999000">中部その他</OPTION>
+        <OPTION VALUE="86060000">由良川</OPTION>
+        <OPTION VALUE="86061000">淀川</OPTION>
+        <OPTION VALUE="86062000">大和川</OPTION>
+        <OPTION VALUE="86063000">円山川</OPTION>
+        <OPTION VALUE="86064000">加古川</OPTION>
+        <OPTION VALUE="86065000">揖保川</OPTION>
+        <OPTION VALUE="86066000">紀の川</OPTION>
+        <OPTION VALUE="86067000">新宮川</OPTION>
+        <OPTION VALUE="86068000">九頭竜川</OPTION>
+        <OPTION VALUE="86069000">北川</OPTION>
+        <OPTION VALUE="86282000">武庫川</OPTION>
+        <OPTION VALUE="86500000">六甲山系</OPTION>
+        <OPTION VALUE="87000000">中国その他</OPTION>
+        <OPTION VALUE="87071000">千代川</OPTION>
+        <OPTION VALUE="87072000">天神川</OPTION>
+        <OPTION VALUE="87073000">日野川</OPTION>
+        <OPTION VALUE="87074000">斐伊川</OPTION>
+        <OPTION VALUE="87075000">江の川</OPTION>
+        <OPTION VALUE="87076000">高津川</OPTION>
+        <OPTION VALUE="87077000">吉井川</OPTION>
+        <OPTION VALUE="87078000">旭川</OPTION>
+        <OPTION VALUE="87079000">高梁川</OPTION>
+        <OPTION VALUE="87080000">芦田川</OPTION>
+        <OPTION VALUE="87081000">太田川</OPTION>
+        <OPTION VALUE="87082000">小瀬川</OPTION>
+        <OPTION VALUE="87083000">佐波川</OPTION>
+        <OPTION VALUE="87291000">神戸川</OPTION>
+        <OPTION VALUE="87293000">三隅川</OPTION>
+        <OPTION VALUE="87295000">阿武川</OPTION>
+        <OPTION VALUE="87296000">沼田川</OPTION>
+        <OPTION VALUE="87297000">黒瀬川</OPTION>
+        <OPTION VALUE="87298000">錦川</OPTION>
+        <OPTION VALUE="87300000">椹野川</OPTION>
+        <OPTION VALUE="87301000">厚東川</OPTION>
+        <OPTION VALUE="87307000">益田川</OPTION>
+        <OPTION VALUE="87500000">中国その他2</OPTION>
+        <OPTION VALUE="87888000">中国その他3</OPTION>
+        <OPTION VALUE="87999000">中国その他4</OPTION>
+        <OPTION VALUE="88000000">四国その他</OPTION>
+        <OPTION VALUE="88084000">吉野川</OPTION>
+        <OPTION VALUE="88085000">那賀川</OPTION>
+        <OPTION VALUE="88086000">土器川</OPTION>
+        <OPTION VALUE="88087000">重信川</OPTION>
+        <OPTION VALUE="88088000">肱川</OPTION>
+        <OPTION VALUE="88089000">物部川</OPTION>
+        <OPTION VALUE="88090000">仁淀川</OPTION>
+        <OPTION VALUE="88091000">渡川</OPTION>
+        <OPTION VALUE="88304000">勝浦川</OPTION>
+        <OPTION VALUE="88305000">香東川</OPTION>
+        <OPTION VALUE="88306000">財田川</OPTION>
+        <OPTION VALUE="88307000">加茂川</OPTION>
+        <OPTION VALUE="88308000">海部川</OPTION>
+        <OPTION VALUE="88309000">奈半利川</OPTION>
+        <OPTION VALUE="88310000">伊尾木川</OPTION>
+        <OPTION VALUE="88311000">鏡川</OPTION>
+        <OPTION VALUE="88312000">松田川</OPTION>
+        <OPTION VALUE="88313000">新川</OPTION>
+        <OPTION VALUE="88314000">打樋川</OPTION>
+        <OPTION VALUE="88500000">四国その他2</OPTION>
+        <OPTION VALUE="88888000">四国その他3</OPTION>
+        <OPTION VALUE="88999000">四国その他4</OPTION>
+        <OPTION VALUE="89092000">遠賀川</OPTION>
+        <OPTION VALUE="89093000">山国川</OPTION>
+        <OPTION VALUE="89094000">筑後川</OPTION>
+        <OPTION VALUE="89095000">矢部川</OPTION>
+        <OPTION VALUE="89096000">松浦川</OPTION>
+        <OPTION VALUE="89097000">六角川</OPTION>
+        <OPTION VALUE="89098000">嘉瀬川</OPTION>
+        <OPTION VALUE="89099000">本明川</OPTION>
+        <OPTION VALUE="89100000">菊池川</OPTION>
+        <OPTION VALUE="89101000">白川</OPTION>
+        <OPTION VALUE="89102000">緑川</OPTION>
+        <OPTION VALUE="89103000">球磨川</OPTION>
+        <OPTION VALUE="89104000">大分川</OPTION>
+        <OPTION VALUE="89105000">大野川</OPTION>
+        <OPTION VALUE="89106000">番匠川</OPTION>
+        <OPTION VALUE="89107000">五ヶ瀬川</OPTION>
+        <OPTION VALUE="89108000">小丸川</OPTION>
+        <OPTION VALUE="89109000">大淀川</OPTION>
+        <OPTION VALUE="89110000">川内川</OPTION>
+        <OPTION VALUE="89111000">肝属川</OPTION>
+        <OPTION VALUE="89999000">九州その他</OPTION>
+      </SELECT>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <NOBNR><FONT SIZE=-1>河川名</FONT><FONT SIZE=-2>※</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <INPUT TYPE="TEXT" NAME="KASEN" SIZE="20">
+    </TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+  </TR>
+  <TR>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <NOBNR><FONT SIZE=-1>都道府県</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <SELECT NAME="KEN">
+        <OPTION VALUE="-1" SELECTED>全国</OPTION>
+        <OPTION VALUE="0101">北海道</OPTION>
+        <OPTION VALUE="0201">青森県</OPTION>
+        <OPTION VALUE="0301">岩手県</OPTION>
+        <OPTION VALUE="0401">宮城県</OPTION>
+        <OPTION VALUE="0501">秋田県</OPTION>
+        <OPTION VALUE="0601">山形県</OPTION>
+        <OPTION VALUE="0701">福島県</OPTION>
+        <OPTION VALUE="0801">茨城県</OPTION>
+        <OPTION VALUE="0901">栃木県</OPTION>
+        <OPTION VALUE="1001">群馬県</OPTION>
+        <OPTION VALUE="1101">埼玉県</OPTION>
+        <OPTION VALUE="1201">千葉県</OPTION>
+        <OPTION VALUE="1301">東京都</OPTION>
+        <OPTION VALUE="1401">神奈川県</OPTION>
+        <OPTION VALUE="1501">新潟県</OPTION>
+        <OPTION VALUE="1601">富山県</OPTION>
+        <OPTION VALUE="1701">石川県</OPTION>
+        <OPTION VALUE="1801">福井県</OPTION>
+        <OPTION VALUE="1901">山梨県</OPTION>
+        <OPTION VALUE="2001">長野県</OPTION>
+        <OPTION VALUE="2101">岐阜県</OPTION>
+        <OPTION VALUE="2201">静岡県</OPTION>
+        <OPTION VALUE="2301">愛知県</OPTION>
+        <OPTION VALUE="2401">三重県</OPTION>
+        <OPTION VALUE="2501">滋賀県</OPTION>
+        <OPTION VALUE="2601">京都府</OPTION>
+        <OPTION VALUE="2701">大阪府</OPTION>
+        <OPTION VALUE="2801">兵庫県</OPTION>
+        <OPTION VALUE="2901">奈良県</OPTION>
+        <OPTION VALUE="3001">和歌山県</OPTION>
+        <OPTION VALUE="3101">鳥取県</OPTION>
+        <OPTION VALUE="3201">島根県</OPTION>
+        <OPTION VALUE="3301">岡山県</OPTION>
+        <OPTION VALUE="3401">広島県</OPTION>
+        <OPTION VALUE="3501">山口県</OPTION>
+        <OPTION VALUE="3601">徳島県</OPTION>
+        <OPTION VALUE="3701">香川県</OPTION>
+        <OPTION VALUE="3801">愛媛県</OPTION>
+        <OPTION VALUE="3901">高知県</OPTION>
+        <OPTION VALUE="4001">福岡県</OPTION>
+        <OPTION VALUE="4101">佐賀県</OPTION>
+        <OPTION VALUE="4201">長崎県</OPTION>
+        <OPTION VALUE="4301">熊本県</OPTION>
+        <OPTION VALUE="4401">大分県</OPTION>
+        <OPTION VALUE="4501">宮崎県</OPTION>
+        <OPTION VALUE="4601">鹿児島県</OPTION>
+        <OPTION VALUE="4701">沖縄県</OPTION>
+      </SELECT>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP" nowrap>
+      <NOBNR><FONT SIZE=-1>市区町村名</FONT><FONT SIZE=-2>※</FONT></NOBNR>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP">
+      <INPUT TYPE="TEXT" NAME="CITY" SIZE="20">
+    </TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+    <TD><IMG SRC="/img/nashi.gif" BORDER="0"></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="4" ALIGN="LEFT" VALIGN="CENTER">
+      <INPUT TYPE="submit" NAME="SUBMIT1" VALUE="　検　索　">
+      <INPUT id="itemClear" TYPE="reset" NAME="SUBMIT1" VALUE="　クリア　">
+    </TD>
+    <TD COLSPAN="3" ALIGN="RIGHT" VALIGN="CENTER"><IMG SRC="/img/nashi.gif" BORDER="0">
+    </TD>
+  </TR>
+</TABLE>
+<TABLE BORDER="0" CELLPADDING="1" CELLSPACING="0" BGCOLOR="#CCCCCC" WIDTH="100%">
+  <TR>
+    <TD COLSPAN="7" ALIGN="CENTER" VALIGN="CENTER">
+      観測所検索リスト</TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="7" ALIGN="CENTER" VALIGN="CENTER">
+      <TABLE id="siteTbl" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="100%" BGCOLOR="#FFFFFF">
+        <TR ALIGN="CENTER" BGCOLOR="#E6E6E6">
+          <TD><FONT SIZE=-1>No</FONT></TD>
+          <TD><FONT SIZE=-1>項目</FONT></TD>
+          <TD><FONT SIZE=-1>水系名</FONT></TD>
+          <TD><FONT SIZE=-1>河川名</FONT></TD>
+          <TD><FONT SIZE=-1>観測所名</FONT></TD>
+          <TD><FONT SIZE=-1>所在地</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>11</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>石狩川</FONT></TD>
+          <TD><FONT SIZE=-1>空知川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010332390" HREF="#">金山ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道空知郡南富良野町字金山</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>12</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>石狩川</FONT></TD>
+          <TD><FONT SIZE=-1>小樽内川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010332520" HREF="#">定山渓ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道札幌市南区定山渓8区</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>13</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>石狩川</FONT></TD>
+          <TD><FONT SIZE=-1>豊平川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010332630" HREF="#">豊平峡ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道札幌市南区定山渓7区</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>14</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>石狩川</FONT></TD>
+          <TD><FONT SIZE=-1>漁川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010332730" HREF="#">漁川ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道恵庭市漁平</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>15</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>後志利別川</FONT></TD>
+          <TD><FONT SIZE=-1>後志利別川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010523040" HREF="#">美利河ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道瀬棚郡今金町字美利河</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>16</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>沙流川</FONT></TD>
+          <TD><FONT SIZE=-1>沙流川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010724030" HREF="#">二風谷ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道沙流郡平取町字二風谷</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>17</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>十勝川</FONT></TD>
+          <TD><FONT SIZE=-1>十勝川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010829060" HREF="#">十勝ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道上川郡新得町字屈足</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>18</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>十勝川</FONT></TD>
+          <TD><FONT SIZE=-1>札内川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368010829410" HREF="#">札内川ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道河西郡中札内村南札内</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>19</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>常呂川</FONT></TD>
+          <TD><FONT SIZE=-1>常呂川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368011128090" HREF="#">鹿ノ子ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>北海道常呂郡置戸町字常元</FONT></TD>
+        </TR>
+        <TR ALIGN="CENTER">
+          <TD><FONT SIZE=-1>20</FONT></TD>
+          <TD><FONT SIZE=-1>ダム・堰</FONT><IMG SRC="/img/tele.gif" BORDER="0" ALIGN="TOP"></TD>
+          <TD><FONT SIZE=-1>阿武隈川</FONT></TD>
+          <TD><FONT SIZE=-1>大滝根川</FONT></TD>
+          <TD><FONT SIZE=-1><A id="siteDetail1_1368020166040" HREF="#">三春ダム</A></FONT></TD>
+          <TD ALIGN="LEFT"><FONT SIZE=-1>福島県田村郡三春町大字西方字中ノ内403-4</FONT></TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+  <TR>
+    <TD COLSPAN="6" ALIGN="LEFT" VALIGN="CENTER">
+      <FONT SIZE=-1>全部で127件がみつかりました。　　　<IMG SRC="/img/tele.gif" BORDER="0" ALIGN="MIDDLE"> :テレメータ観測所</FONT>
+    </TD>
+    <TD ALIGN="RIGHT" VALIGN="CENTER">
+      <A HREF="/cgi-bin/SrchSite.exe?KOMOKU=05&NAME=&SUIKEI=-00001&KASEN=&KEN=-1&CITY=&PAGE=0"><IMG SRC="/img/back.gif" BORDER="0"></A>
+      <A HREF="/cgi-bin/SrchSite.exe?KOMOKU=05&NAME=&SUIKEI=-00001&KASEN=&KEN=-1&CITY=&PAGE=2"><IMG SRC="/img/next.gif" BORDER="0"></A>
+    </TD>
+  </TR>
+</TABLE>
+</FORM>
+<FORM>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" BGCOLOR="#CCCCCC">
+  <TR>
+    <TD VALIGN="MIDDLE">
+      <FONT SIZE=-1 COLOR="#FF0000"></FONT><FONT SIZE=-1>●観測所記号入力</FONT>
+      <INPUT TYPE="TEXT" NAME="ID" SIZE="20" MAXLENGTH="15">
+      <INPUT id="siteDetail2" TYPE="SUBMIT" NAME="SUBMIT2" VALUE="検索">
+    </TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

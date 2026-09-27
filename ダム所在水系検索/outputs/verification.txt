@@ -1,0 +1,2 @@
+counts={'prefectures': 47, 'river_systems': 1, 'rivers': 1, 'dams': 1, 'dam_source_records': 1, 'dam_river_matches': 1}
+rows=[('草木ダム', '利根川水系', '渡良瀬川', '群馬県', 36.525, 139.316)]

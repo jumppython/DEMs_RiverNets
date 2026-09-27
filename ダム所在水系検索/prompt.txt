@@ -1,0 +1,22 @@
+作業フォルダ：C:\Users\jumpp\work\2026\XMF300\標高データによる流域解析\補助機能\ダム所在推計検索
+目的：ダムと水系との関連関係を検索できる機能構築。ダム名で水系名、河川名と都道府県名を検出することができる。
+初期案：
+１）ネットからデータを収集してDB構築
+２）DBは3つ作る。
+　　水系河川DB(river_system_db)：
+　　　　id			int
+	river_system_name	string(40)
+	river_name		string(40)
+	prefectures		string(20)
+　　ダムDB(dam_db)：
+	id			int
+	dam_name		string(40)
+	river_system_id		int
+	lat			float
+	lon			float
+３）ネット上情報は以下になる
+　　1 - https://www.mlit.go.jp/mizukokudo/mizsei/mizukokudo_mizsei_tk2_000024.html
+　　2 - https://mudam.nilim.go.jp/search
+　　3 - https://www1.river.go.jp/cgi-bin/SrchSite.exe?KOMOKU=05&NAME=&SUIKEI=-00001&KASEN=&KEN=-1&CITY=&PAGE=12
+　　※3は複数URLがあり、「PAGE」の値は「1~12」がある
+とりあえずは上の情報で検討してください。DB設計案の改善があれば教えてください。
