@@ -224,9 +224,64 @@ def import_river_site_pages(conn: sqlite3.Connection) -> int:
     return total_records
 
 
-def fetch_reference_pages() -> None:
-    for name, url in SOURCES.items():
-        fetch_url(url, RAW_DIR / f"{name}.html")
+def fetch_reference_pages(conn: sqlite3.Connection) -> int:
+    """
+    :param conn: DBへのアクセス
+    :return: DBに挿入した記録の件数
+    取得する情報は「水系名」、「河川名」、「ダム名」、「都道府県」、「緯度」と「経度」の6種類がある
+    情報テーブルはページ毎に構造が違うので、ページ毎に特化した処理が必要になる
+
+    mlit_river_systemページに記載されているテーブル、headerに5項目あるけど、コラムは実際に6件程度ある
+    内に4、5件目は同じheaderに収まれ、ダム詳細に繋げる2つのURLなので、処理上スキップしてもかまいません
+    「緯度」と「経度」は記載されていないため取得できません
+
+    mudam_searchページに記載されているテーブル、「水系」と「河川名」が1項目に混在する（「・」で区分）
+    「緯度」と「経度」は2番目の項目のURLリンク先にある
+    このリンク先のページに「緯度経度」は2行目にあり、「北緯○○度○○分○○.○○秒\n東経○○度○○分○○.○○秒」のフォーマットで記載される
+    """
+    total_records = 0
+
+    # mlit_river_systemページ処理
+    name = "mlit_river_system"
+    url = SOURCES[name]
+    text = fetch_url(url, RAW_DIR / f"{name}.html")
+    tables = parse_html_tables(text)
+    save_table_csv(tables, PROCESSED_DIR / f"{name}_tables.csv")
+    for table in tables:
+        if len(table) < 2:
+            continue
+        header = [normalize_text(x) for i, x in enumerate(table[0]) if i in [0, 1, 2, 4]]
+        for row in table[1:]:
+            if len(row) != len(header):
+                continue
+            item = [_ for i, _ in enumerate(row) if i in [0, 1, 2, 5]]
+            rec = dict(zip(header, item))
+            dam_id = create_dam_record(conn, rec, "水文水質DB", url)
+            if dam_id:
+                total_records += 1
+    conn.commit()
+
+    # mudam_searchページ処理
+    name = "mudam_search"
+    url = SOURCES[name]
+    text = fetch_url(url, RAW_DIR / f"{name}.html")
+    tables = parse_html_tables(text)
+    save_table_csv(tables, PROCESSED_DIR / f"{name}_tables.csv")
+    for table in tables:
+        if len(table) < 2:
+            continue
+        header = [normalize_text(x) for x in table[0]]
+        re_header = header[0].split("・") + header[1:]
+        for row in table[1:]:
+            if len(row) != len(header):
+                continue
+            item = row[0].split("・") + row[1:]
+            rec = dict(zip(re_header, item))
+            dam_id = create_dam_record(conn, rec, "水文水質DB", url)
+            if dam_id:
+                total_records += 1
+    conn.commit()
+    return total_records
 
 
 def main() -> None:
@@ -237,13 +292,11 @@ def main() -> None:
 
     db_path = Path(args.db)
     init_db(db_path)
-    fetch_reference_pages()
-    if args.fetch_only:
-        print("Fetched reference pages only.")
-        return
+    count = 0
     with sqlite3.connect(db_path) as conn:
         conn.execute("PRAGMA foreign_keys = ON")
-        count = import_river_site_pages(conn)
+        count += fetch_reference_pages(conn)
+        # count += import_river_site_pages(conn)
     print(f"Imported possible dam records from river site pages: {count}")
 
 
